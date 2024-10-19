@@ -1,0 +1,5 @@
+return {
+  {
+    "ycm-core/YouCompleteMe",
+  },
+}
