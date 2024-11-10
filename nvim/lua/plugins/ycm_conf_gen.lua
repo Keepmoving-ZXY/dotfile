@@ -1,0 +1,5 @@
+return {
+  {
+    "rdnetto/YCM-Generator",
+  },
+}
