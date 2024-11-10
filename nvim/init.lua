@@ -64,7 +64,7 @@ vim.g.mapleader = "\\"
 vim.cmd('let g:Lf_WindowPosition = \'popup\'')
 vim.keymap.set('n', '<leader>fr', ':<C-U><C-R>=printf("Leaderf! gtags -r %s", expand("<cword>"))<CR><CR>')
 vim.keymap.set('n', '<leader>fd', ':<C-U><C-R>=printf("Leaderf! gtags -d %s", expand("<cword>"))<CR><CR>')
-vim.api.nvim_set_keymap('v', '<C-y>', ":<C-u>'<,'>w !tee -a /work/copy.txt<CR>", { noremap = true, silent = true })
+vim.api.nvim_set_keymap('v', '<C-y>', ":<C-u>'<,'>w !tee /work/copy.txt<CR>", { noremap = true, silent = true })
 vim.api.nvim_set_keymap('n', '<leader>ff', ':LeaderfFile<CR>', { noremap = true, silent = true })
 
 vim.api.nvim_create_user_command('FindInKernel', function(opts)
