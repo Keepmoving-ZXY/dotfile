@@ -20,6 +20,7 @@ vim.opt.history = 50
 vim.opt.cmdheight = 0
 vim.opt.autoindent = true
 vim.opt.cindent = true
+vim.opt.smartindent = true
 
 vim.cmd('syntax on')
 vim.cmd('colorscheme vscode')
@@ -64,8 +65,9 @@ vim.g.mapleader = "\\"
 vim.cmd('let g:Lf_WindowPosition = \'popup\'')
 vim.keymap.set('n', '<leader>fr', ':<C-U><C-R>=printf("Leaderf! gtags -r %s", expand("<cword>"))<CR><CR>')
 vim.keymap.set('n', '<leader>fd', ':<C-U><C-R>=printf("Leaderf! gtags -d %s", expand("<cword>"))<CR><CR>')
-vim.api.nvim_set_keymap('v', '<C-y>', ":<C-u>'<,'>w !tee /work/copy.txt<CR>", { noremap = true, silent = true })
+vim.api.nvim_set_keymap('v', '<C-y>', ":<C-u>'<,'>w !tee -a /work/copy.txt<CR>", { noremap = true, silent = true })
 vim.api.nvim_set_keymap('n', '<leader>ff', ':LeaderfFile<CR>', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', '<C-i>', ':vsp<CR><C-w>l:LeaderfFile<CR>', { noremap = true, silent = true })
 
 vim.api.nvim_create_user_command('FindInKernel', function(opts)
   vim.cmd('Leaderf! gtags -d ' .. vim.fn.shellescape(opts.args))
