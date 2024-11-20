@@ -6,6 +6,8 @@ require("nvim-treesitter.configs").setup({
     }
 })
 
+require 'lspconfig'.clangd.setup{}
+
 vim.opt.number = true
 vim.opt.tabstop = 2
 vim.opt.shiftwidth = 2
@@ -42,20 +44,6 @@ vim.cmd('let NERDTreeStatusline=1')
 vim.cmd('let g:NERDTreeDirArrowExpandable = \'*\'')
 vim.cmd('let g:NERDTreeDirArrowCollapsible = \'*\'')
 
-
-vim.cmd('set completeopt=longest,menu')
-vim.cmd('let g:ycm_collect_identifiers_from_tags_files=1')
-vim.cmd('let g:ycm_show_diagnostics_ui=0')
-vim.cmd('let g:ycm_min_num_of_chars_for_completion=3')
-vim.cmd('let g:ycm_complete_in_strings = 1')
-vim.cmd('let g:ycm_key_invoke_completion = \'<C-p>\'')
-vim.cmd('let g:ycm_confirm_extra_conf = 0')
-vim.cmd('let g:ycm_seed_identifiers_with_syntax=1')
-vim.cmd('let g:ycm_collect_identifiers_from_tags_files=1')
-vim.cmd('nnoremap <C-g> :YcmCompleter GoToDefinition<CR>')
-vim.cmd('nnoremap <leader>gg :YcmCompleter GoToDefinitionElseDeclaration<CR>')
-vim.g.ycm_filetype_blacklist = { tagbar = 1, nerdtree = 1 }
-
 vim.opt.statusline = '%f  '
 vim.opt.statusline = vim.o.statusline .. '%h%m%r'
 vim.opt.statusline = vim.o.statusline .. '%l/%L,%c'
@@ -69,6 +57,12 @@ vim.api.nvim_set_keymap('v', '<C-y>', ":<C-u>'<,'>w !tee -a /work/copy.txt<CR>",
 vim.api.nvim_set_keymap('n', '<leader>ff', ':LeaderfFile<CR>', { noremap = true, silent = true })
 vim.api.nvim_set_keymap('n', '<C-i>', ':vsp<CR><C-w>l:LeaderfFile<CR>', { noremap = true, silent = true })
 
+vim.diagnostic.config {
+  virtual_text = false,
+  signs = false,
+  underline = false,
+}
+vim.api.nvim_set_keymap('n', '<C-g>', '<C-]>', { noremap = true })
 vim.api.nvim_create_user_command('FindInKernel', function(opts)
   vim.cmd('Leaderf! gtags -d ' .. vim.fn.shellescape(opts.args))
 end, { nargs = 1 })
