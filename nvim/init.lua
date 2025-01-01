@@ -32,6 +32,7 @@ vim.cmd('let g:vim_json_conceal=0')
 vim.cmd('set cc=80')
 vim.cmd('set so=7')
 vim.cmd('nmap <F8> :!bash /work/scripts/sync.sh<CR><CR>')
+vim.cmd('set clipboard=unnamedplus')
 
 vim.cmd('let NERDTreeWinPos=\'left\'')
 vim.cmd('let NERDTreeShowLineNumbers=1')
@@ -49,8 +50,8 @@ vim.opt.statusline = vim.o.statusline .. '%h%m%r'
 vim.opt.statusline = vim.o.statusline .. '%l/%L,%c'
 vim.opt.statusline = vim.o.statusline .. ' [%{&filetype}]'
 
-vim.g.mapleader = "\\"
 vim.cmd('let g:Lf_WindowPosition = \'popup\'')
+vim.cmd('let g:Lf_ShowDevIcons = 0')
 vim.keymap.set('n', '<leader>fr', ':<C-U><C-R>=printf("Leaderf! gtags -r %s", expand("<cword>"))<CR><CR>')
 vim.keymap.set('n', '<leader>fd', ':<C-U><C-R>=printf("Leaderf! gtags -d %s", expand("<cword>"))<CR><CR>')
 vim.api.nvim_set_keymap('v', '<C-y>', ":<C-u>'<,'>w !tee -a /work/copy.txt<CR>", { noremap = true, silent = true })
