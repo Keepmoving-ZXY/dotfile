@@ -8,3 +8,6 @@ fedora41中微信在高分屏中界面太小问题：
     
 fedora41中微信中文字体显示不正常问题:  
 将`fonts.conf`复制到`~/.config/fontconfig/`之中，参考[这里](https://blog.geekgo.tech/linux/flatpak-%E5%BA%94%E7%94%A8%E4%B8%AD%E6%96%87%E5%AD%97%E4%BD%93%E9%97%AE%E9%A2%98/)；
+
+kubuntu 24.04 LTS中坚果云主界面显示不正常问题：  
+将坚果云的desktop文件中exec部分修改为：`-c 'GDK_SCALE=2 GDK_DPI_SCALE=0.5 exec ~/.nutstore/dist/bin/nutstore-pydaemon.py'`
