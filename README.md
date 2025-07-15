@@ -11,3 +11,6 @@ fedora41中微信中文字体显示不正常问题:
 
 kubuntu 24.04 LTS中坚果云主界面显示不正常问题：  
 将坚果云的desktop文件中exec部分修改为：`-c 'GDK_SCALE=2 GDK_DPI_SCALE=0.5 exec ~/.nutstore/dist/bin/nutstore-pydaemon.py'`，解决方法参考[这里](https://naxiro.com/posts/linux-hidpi-nutstore/);
+
+rime输入法输入顿号时出现候选列标而非直接输入的问题：  
+`luna_pinyin.custom.yaml`文件放到`.local/share/fcitx5/rime/`中；
