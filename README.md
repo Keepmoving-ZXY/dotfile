@@ -16,7 +16,8 @@ rime输入法输入顿号时出现候选列标而非直接输入的问题：
 `luna_pinyin.custom.yaml`文件放到`.local/share/fcitx5/rime/`中；  
 
 todesk在kde中界面缩放问题：  
+在`~/.config/environment.d/gtk-hidpi.conf`文件中放入如下内容：    
 ```
-export GDK_SCALE=2  
-export GDK_DPI_SCALE=0.75
+GDK_SCALE=2
+GDK_DPI_SCALE=0.75
 ```
