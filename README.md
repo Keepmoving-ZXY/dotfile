@@ -19,3 +19,8 @@ kubuntu 24.04 TLS中todesk界面缩放问题：
 GDK_SCALE=2
 GDK_DPI_SCALE=0.75
 ```
+或在终端中启动todesk之前执行如下命令：   
+```
+export GDK_SCALE=2
+export GDK_DPI_SCALE=0.75
+```
